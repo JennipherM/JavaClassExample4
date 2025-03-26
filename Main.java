@@ -15,12 +15,15 @@ enum Choice
 public class Main {
     public static void main(String[] args) {
 
+        while (true)
+      {
         Scanner input = new Scanner(System.in); 
         System.out.println("Enter rock, paper, or scissors(or exit to quit)");
         Random random = new Random();
 
         String userInput = input.nextLine().toLowerCase();
-
+        if (userInput == "EXIT") break; // stop the game
+        
         Choice userChoice = Choice.valueOf(userInput);
         Choice compChoice = Choice.values()[random.nextInt(2)];
 
@@ -39,4 +42,5 @@ public class Main {
             System.out.println("you win");
         }
     }
+}
 }
